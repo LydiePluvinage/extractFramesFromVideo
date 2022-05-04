@@ -5,6 +5,7 @@ This application will capture frames from a video and save them into specified f
 ** INSTALLATION **
 `git clone` to clone the repository
 `npm install` to install dependencies
+`npm run ts` pour compiler typescript
 `npm run start` to start the application
 
 ** PREREQUISITES **
