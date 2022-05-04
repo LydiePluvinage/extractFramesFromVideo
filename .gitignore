@@ -1,4 +1,7 @@
 node_modules/
 media/
+pictures/
+videos/
 package-lock.json
 .env
+*.js
