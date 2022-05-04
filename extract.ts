@@ -5,7 +5,11 @@ import ffmpeg from 'ffmpeg';
 // return : -
 // packages : ffmpeg
 // captures frames from a video, name them and copy them to specified path
-const extractFramesFromVideo = (videoPath, imagesPath, frameRate, number) => {
+const extractFramesFromVideo = (
+  videoPath: string,
+  imagesPath: string,
+  frameRate: number
+) => {
   var process = new ffmpeg(videoPath);
 
   process.then(
@@ -15,7 +19,6 @@ const extractFramesFromVideo = (videoPath, imagesPath, frameRate, number) => {
         `${imagesPath}/`,
         {
           frame_rate: frameRate,
-          number: number,
           file_name: videoPath + '_%t_%s',
         },
         function (error, files) {

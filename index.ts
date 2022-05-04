@@ -4,24 +4,19 @@ import glob from 'glob';
 
 try {
   // gets files from video repertory
-  var files = fs.readdirSync('/assets/photos/');
-  // options is optional
-  glob(`${process.env.VIDEO_PATH}/*.mp4`, options, (err, files) => {
+  glob(`${process.env.VIDEO_PATH}/*.mov`, (err, files) => {
     files
-      .filter((file) => !file.endsWith('_processed.mp4'))
+      .filter((file) => !file.endsWith('_processed.mov'))
       .map((file) => {
-        console.log(file);
         // process file
         extract(
           `${process.env.VIDEO_PATH}/${file}`,
           `${process.env.IMAGES_PATH}/`,
-          1,
-          5
+          1
         );
         // rename file to mark it processed
       });
   });
 } catch (e) {
-  console.log(e.code);
-  console.log(e.msg);
+  console.log(e);
 }
